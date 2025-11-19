@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: agent-weave
+  datasource:
+    user:
+      url: jdbc:mysql://localhost:3306/agent_users
+      username: agent
+      password: agent
+      driver-class-name: com.mysql.cj.jdbc.Driver
+    task:
+      url: jdbc:postgresql://localhost:5432/agent_tasks
+      username: agent
+      password: agent
+      driver-class-name: org.postgresql.Driver
+  jpa:
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
+    show-sql: false
+  kafka:
+    bootstrap-servers: localhost:9092
+  redis:
+    host: localhost
+    port: 6379
+
+kafka:
+  topics:
+    doc: doc-agent-topic
+    plan: plan-agent-topic
+    write: write-agent-topic
+
+logging:
+  level:
+    org.apache.kafka: WARN
+    org.springframework.security: INFO
