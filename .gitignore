@@ -1,0 +1,7 @@
+/target
+/node_modules
+/.idea
+/.vscode
+*.log
+/frontend/node_modules
+/backend/target
